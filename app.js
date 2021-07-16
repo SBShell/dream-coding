@@ -26,9 +26,9 @@ folderName.forEach((dir) => {
 });
 
 fs.promises.readdir(targetPath).then((files) => {
-  const newFiles = files.filter((file) => path.extname(file) !== "");
+  const validFiles = files.filter((file) => path.extname(file) !== "");
   folderName.forEach((dir) => {
-    moveFiles(newFiles, dir);
+    moveFiles(validFiles, dir);
   });
 });
 
